@@ -387,7 +387,7 @@ test('can print functions', () => {
     func: () => {},
     'crazy name': () => {},
     namedFunc: function named() {},
-    asyncFunc: async (arg: any) => 123,
+    asyncFunc: async (arg: any) => arg,
     toTree,
   };
   const formatted = toTree(pojo);

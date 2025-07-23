@@ -1,0 +1,86 @@
+{
+  "name": "json-dump",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.0.1",
+  "description": "JSON printer, print JSON or any POJO to terminal or debug window",
+  "author": {
+    "name": "streamich",
+    "url": "https://github.com/streamich"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/streamich/json-dump",
+  "repository": "streamich/json-dump",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/streamich"
+  },
+  "keywords": [
+    "json",
+    "tree",
+    "pojo",
+    "print",
+    "dump",
+    "json dump",
+    "print json"
+  ],
+  "engines": {
+    "node": ">=10.0"
+  },
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "LICENSE",
+    "lib/"
+  ],
+  "scripts": {
+    "format": "biome format ./src",
+    "format:fix": "biome format --write ./src",
+    "lint": "biome lint ./src",
+    "lint:fix": "biome lint --write ./src",
+    "clean": "npx rimraf@5.0.5 lib es6 es2019 es2020 esm typedocs coverage gh-pages yarn-error.log",
+    "build": "tsc --project tsconfig.build.json --module commonjs --target es2020 --outDir lib",
+    "test": "jest --maxWorkers 7",
+    "test:ci": "jest --maxWorkers 3 --no-cache",
+    "coverage": "yarn test --collectCoverage",
+    "typedoc": "npx typedoc@0.25.12",
+    "build:pages": "npx rimraf@5.0.5 gh-pages && mkdir -p gh-pages && cp -r typedocs/* gh-pages && cp -r coverage gh-pages/coverage",
+    "deploy:pages": "npx gh-pages -d gh-pages",
+    "publish-coverage-and-typedocs": "yarn typedoc && yarn coverage && yarn build:pages && yarn deploy:pages"
+  },
+  "peerDependencies": {
+    "tslib": "2"
+  },
+  "dependencies": {
+    "tree-dump": "^1.0.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.1.2",
+    "@types/jest": "^30.0.0",
+    "jest": "^30.0.5",
+    "ts-jest": "^29.4.0",
+    "tslib": "^2.8.1",
+    "typescript": "^5.8.3"
+  },
+  "jest": {
+    "verbose": true,
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "transformIgnorePatterns": [],
+    "testRegex": ".*/(__tests__|__jest__|demo)/.*\\.(test|spec)\\.ts$"
+  },
+  "release": {
+    "branches": [
+      "master",
+      "next"
+    ]
+  }
+}

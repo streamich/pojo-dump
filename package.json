@@ -1,5 +1,5 @@
 {
-  "name": "json-dump",
+  "name": "pojo-dump",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -11,8 +11,8 @@
     "url": "https://github.com/streamich"
   },
   "license": "Apache-2.0",
-  "homepage": "https://github.com/streamich/json-dump",
-  "repository": "streamich/json-dump",
+  "homepage": "https://github.com/streamich/pojo-dump",
+  "repository": "streamich/pojo-dump",
   "funding": {
     "type": "github",
     "url": "https://github.com/sponsors/streamich"

@@ -1,4 +1,4 @@
-# `json-dump`
+# `pojo-dump`
 
 Prints a JSON structure (or any POJO) to the console. Can print to a single line
 or to a tree structure.
@@ -9,9 +9,9 @@ or to a tree structure.
 Install the package using NPM or Yarn:
 
 ```bash
-npm install json-dump
+npm install pojo-dump
 # or
-yarn add json-dump
+yarn add pojo-dump
 ```
 
 
@@ -29,7 +29,7 @@ The library provides the following exports:
 Print to a single line:
 
 ```js
-import { toLine } from 'json-dump';
+import { toLine } from 'pojo-dump';
 
 const data = [null, true, false, 123, 0.1, 'as\ndf', [1, 2, 3], { foo: 'bar' }];
 console.log(toLine(data));
@@ -39,7 +39,7 @@ console.log(toLine(data));
 Print to a multi-line tree layout:
 
 ```js
-import { toTree } from 'json-dump';
+import { toTree } from 'pojo-dump';
 
 const data = { foo: 'bar', nested: [1, 2, { key: 'value' }] };
 console.log(toTree(data));

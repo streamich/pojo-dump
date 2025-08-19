@@ -1,4 +1,4 @@
-import { toLLM } from '../toLLM';
+import {toLLM} from '../toLLM';
 
 describe('toLLM', () => {
   describe('primitive values', () => {
@@ -53,7 +53,10 @@ describe('toLLM', () => {
     });
 
     test('nested arrays', () => {
-      const result = toLLM([[1, 2], [3, 4]]);
+      const result = toLLM([
+        [1, 2],
+        [3, 4],
+      ]);
       expect(result).toBe('[[1,2],\n [3,4]]');
     });
   });
@@ -84,8 +87,8 @@ describe('toLLM', () => {
         second: 2,
         foo: {
           bar: 132,
-          baz: "asdf"
-        }
+          baz: 'asdf',
+        },
       };
       const result = toLLM(data);
       const expected = `{"first":1,
@@ -99,9 +102,9 @@ describe('toLLM', () => {
       const result = toLLM({
         level1: {
           level2: {
-            value: 'deep'
-          }
-        }
+            value: 'deep',
+          },
+        },
       });
       expect(result).toBe('{"level1":{"level2":{"value":"deep"}}}');
     });
@@ -139,7 +142,7 @@ describe('toLLM', () => {
     test('array of objects', () => {
       const data = [
         {name: 'Alice', age: 30},
-        {name: 'Bob', age: 25}
+        {name: 'Bob', age: 25},
       ];
       const result = toLLM(data);
       const expected = `[{"name":"Alice","age":30},
@@ -150,7 +153,7 @@ describe('toLLM', () => {
     test('object with arrays', () => {
       const data = {
         users: ['Alice', 'Bob'],
-        numbers: [1, 2, 3]
+        numbers: [1, 2, 3],
       };
       const result = toLLM(data);
       const expected = `{"users":["Alice","Bob"],
@@ -163,10 +166,10 @@ describe('toLLM', () => {
         a: {
           b: [
             {c: 1, d: 'test'},
-            {c: 2, d: 'test2'}
+            {c: 2, d: 'test2'},
           ],
-          e: 'value'
-        }
+          e: 'value',
+        },
       };
       const result = toLLM(data);
       // This should produce compact but readable JSON
@@ -182,7 +185,7 @@ describe('toLLM', () => {
         const jsonString = toLLM(value);
         expect(() => JSON.parse(jsonString)).not.toThrow();
         const parsed = JSON.parse(jsonString);
-        
+
         // For objects and arrays, compare structure
         if (typeof value === 'object' && value !== null) {
           expect(parsed).toEqual(value);
@@ -209,16 +212,19 @@ describe('toLLM', () => {
     testRoundtrip({a: 1, b: 'test', c: true}, 'mixed value object');
     testRoundtrip([{a: 1}, {b: 2}], 'array of objects');
     testRoundtrip({arr: [1, 2], obj: {nested: true}}, 'object with nested structures');
-    
+
     // Test the specific example from the issue
-    testRoundtrip({
-      first: 1,
-      second: 2,
-      foo: {
-        bar: 132,
-        baz: "asdf"
-      }
-    }, 'issue example');
+    testRoundtrip(
+      {
+        first: 1,
+        second: 2,
+        foo: {
+          bar: 132,
+          baz: 'asdf',
+        },
+      },
+      'issue example',
+    );
   });
 
   describe('token efficiency', () => {
@@ -228,16 +234,16 @@ describe('toLLM', () => {
         second: 2,
         foo: {
           bar: 132,
-          baz: "asdf"
-        }
+          baz: 'asdf',
+        },
       };
-      
+
       const llmFormat = toLLM(data);
       const standardFormat = JSON.stringify(data, null, 2);
-      
+
       // LLM format should be significantly shorter
       expect(llmFormat.length).toBeLessThan(standardFormat.length);
-      
+
       // Should roughly match the example from the issue
       // The example claims 23 tokens vs 37 tokens (about 38% reduction)
       const tokenReduction = (standardFormat.length - llmFormat.length) / standardFormat.length;
@@ -247,7 +253,7 @@ describe('toLLM', () => {
     test('maintains readability with line breaks', () => {
       const data = {a: 1, b: 2, c: 3};
       const result = toLLM(data);
-      
+
       // Should have line breaks for readability
       expect(result).toContain('\n');
       // But should start compactly

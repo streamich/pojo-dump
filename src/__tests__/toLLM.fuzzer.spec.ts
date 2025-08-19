@@ -1,5 +1,5 @@
-import { RandomJson } from '@jsonjoy.com/json-random';
-import { toLLM } from '../toLLM';
+import {RandomJson} from '@jsonjoy.com/json-random';
+import {toLLM} from '../toLLM';
 
 describe('toLLM fuzzer tests', () => {
   let generator: RandomJson;
@@ -13,10 +13,10 @@ describe('toLLM fuzzer tests', () => {
       generator.create();
       const original = generator.root;
       const llmFormatted = toLLM(original);
-      
+
       // Verify the output is valid JSON
       expect(() => JSON.parse(llmFormatted)).not.toThrow();
-      
+
       // Verify roundtrip compatibility
       const parsed = JSON.parse(llmFormatted);
       expect(parsed).toEqual(original);
@@ -30,10 +30,10 @@ describe('toLLM fuzzer tests', () => {
       generator.create();
       const original = generator.root;
       const llmFormatted = toLLM(original);
-      
+
       // Verify the output is valid JSON
       expect(() => JSON.parse(llmFormatted)).not.toThrow();
-      
+
       // Verify roundtrip compatibility
       const parsed = JSON.parse(llmFormatted);
       expect(parsed).toEqual(original);
@@ -49,10 +49,10 @@ describe('toLLM fuzzer tests', () => {
       generator.create();
       const original = generator.root;
       const llmFormatted = toLLM(original);
-      
+
       // Verify the output is valid JSON
       expect(() => JSON.parse(llmFormatted)).not.toThrow();
-      
+
       // Verify roundtrip compatibility
       const parsed = JSON.parse(llmFormatted);
       expect(parsed).toEqual(original);
@@ -68,10 +68,10 @@ describe('toLLM fuzzer tests', () => {
       generator.create();
       const original = generator.root;
       const llmFormatted = toLLM(original);
-      
+
       // Verify the output is valid JSON
       expect(() => JSON.parse(llmFormatted)).not.toThrow();
-      
+
       // Verify roundtrip compatibility
       const parsed = JSON.parse(llmFormatted);
       expect(parsed).toEqual(original);
@@ -85,13 +85,13 @@ describe('toLLM fuzzer tests', () => {
       generator.opts.odds.array = 3;
       generator.opts.odds.object = 3;
       generator.create();
-      
+
       const original = generator.root;
       const llmFormatted = toLLM(original);
-      
+
       // Verify the output is valid JSON
       expect(() => JSON.parse(llmFormatted)).not.toThrow();
-      
+
       // Verify roundtrip compatibility
       const parsed = JSON.parse(llmFormatted);
       expect(parsed).toEqual(original);
@@ -104,11 +104,11 @@ describe('toLLM fuzzer tests', () => {
       const original = generator.root;
       const llmFormatted = toLLM(original);
       const standardFormatted = JSON.stringify(original, null, 2);
-      
+
       // Verify roundtrip compatibility
       const parsed = JSON.parse(llmFormatted);
       expect(parsed).toEqual(original);
-      
+
       // Verify token efficiency (LLM format should be more compact)
       expect(llmFormatted.length).toBeLessThanOrEqual(standardFormatted.length);
     }

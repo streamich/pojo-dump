@@ -7,7 +7,7 @@
  * - No spaces around : and , separators
  * - Trailing braces on last line
  * - Small objects/arrays on single line
- * 
+ *
  * @module
  */
 
@@ -37,11 +37,7 @@ const isSmallValue = (value: unknown, context: 'root' | 'array-item' | 'object-p
   return keys.length <= 2; // Root level: up to 2 properties can be single-line
 };
 
-const formatValue = (
-  value: unknown,
-  indent: string = '',
-  context: 'root' | 'array-item' | 'object-prop',
-): string => {
+const formatValue = (value: unknown, indent: string = '', context: 'root' | 'array-item' | 'object-prop'): string => {
   if (value === null) return 'null';
   if (typeof value === 'boolean') return String(value);
   if (typeof value === 'number') return String(value);

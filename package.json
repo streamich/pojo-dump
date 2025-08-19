@@ -55,6 +55,7 @@
     "tslib": "2"
   },
   "dependencies": {
+    "@jsonjoy.com/json-random": "^1.2.0",
     "tree-dump": "^1.0.3"
   },
   "devDependencies": {

@@ -68,7 +68,7 @@ const formatValue = (
 
     // Small arrays on single line
     if (isSmallValue(value, context)) {
-      return '[' + value.map((item) => formatValue(item, '', 'array-item')).join(',') + ']';
+      return JSON.stringify(value);
     }
 
     // Multi-line arrays: first item on same line, others indented
@@ -84,10 +84,7 @@ const formatValue = (
 
     // Small objects on single line
     if (isSmallValue(value, context)) {
-      const pairs = keys.map(
-        (key) => JSON.stringify(key) + ':' + formatValue((value as Record<string, unknown>)[key], '', 'object-prop'),
-      );
-      return '{' + pairs.join(',') + '}';
+      return JSON.stringify(value);
     }
 
     // Multi-line objects: first property on same line, others indented

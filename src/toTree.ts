@@ -59,11 +59,8 @@ const wrap = (line: string, tab: string, targetLineWidth: number): string => {
 
 const wrappedStringify = (value: unknown, tab: string): string => {
   if (typeof value === 'string') {
-    // let text = toLine(value);
-    // const lines = text.split('" ⏎ ');
     const lines = value.split('\n');
     const length = lines.length;
-    const lines2: string[] = [];
     for (let i = 0; i < length; i++) {
       const rawLine = lines[i];
       const isFirst = i === 0;
@@ -72,14 +69,9 @@ const wrappedStringify = (value: unknown, tab: string): string => {
         continue;
       }
       const line = toLine(rawLine);
-      const isLast = i + 1 === length;
       lines[i] = (isFirst ? '' : tab) + wrap(line, tab, LINE_WIDTH);
     }
-    // text = lines.join('\n');
-    // const text = text.replaceAll('⏎ ↵', '⏎');
     const text = lines.join(' ⏎\n');
-    // text = text.replaceAll('" ⏎ ', '" ⏎\n');
-    // text = wrap(text, tab, LINE_WIDTH);
     return text;
   }
   return wrap(toLine(value), tab, LINE_WIDTH);

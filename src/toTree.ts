@@ -82,7 +82,7 @@ const wrappedStringify = (value: unknown, tab: string): string => {
     // text = wrap(text, tab, LINE_WIDTH);
     return text;
   }
-  return wrap(toLine(value), tab, LINE_WIDTH)
+  return wrap(toLine(value), tab, LINE_WIDTH);
 };
 
 const printEntry = (key: unknown, val: unknown, tab: string): string => {

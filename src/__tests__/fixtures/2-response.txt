@@ -1,0 +1,293 @@
+╿
+├─ [0]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         ├─ role = "assistant"
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "", name = "list_dir" }
+│   │                ├─ id = "call_8yGzH38HntdyDOqxmxe5YlEz"
+│   │                ├─ index = 0
+│   │                └─ type = "function"
+│   ├─ created = 1,755,958,140
+│   ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+│   └─ model = "gpt-5-mini"
+├─ [1]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "{\"" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,140
+│   ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+│   └─ model = "gpt-5-mini"
+├─ [2]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "path" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,140
+│   ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+│   └─ model = "gpt-5-mini"
+├─ [3]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "\":" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,140
+│   ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+│   └─ model = "gpt-5-mini"
+├─ [4]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "\"/" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,140
+│   ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+│   └─ model = "gpt-5-mini"
+├─ [5]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "Users" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,140
+│   ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+│   └─ model = "gpt-5-mini"
+├─ [6]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "/m" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,140
+│   ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+│   └─ model = "gpt-5-mini"
+├─ [7]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "1" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,140
+│   ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+│   └─ model = "gpt-5-mini"
+├─ [8]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "book" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,140
+│   ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+│   └─ model = "gpt-5-mini"
+├─ [9]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "/" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,140
+│   ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+│   └─ model = "gpt-5-mini"
+├─ [10]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "Developer" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,140
+│   ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+│   └─ model = "gpt-5-mini"
+├─ [11]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "/" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,140
+│   ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+│   └─ model = "gpt-5-mini"
+├─ [12]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "stream" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,140
+│   ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+│   └─ model = "gpt-5-mini"
+├─ [13]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "ich" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,140
+│   ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+│   └─ model = "gpt-5-mini"
+├─ [14]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "/json" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,140
+│   ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+│   └─ model = "gpt-5-mini"
+├─ [15]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "-" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,140
+│   ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+│   └─ model = "gpt-5-mini"
+├─ [16]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "joy" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,140
+│   ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+│   └─ model = "gpt-5-mini"
+├─ [17]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "/json" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,140
+│   ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+│   └─ model = "gpt-5-mini"
+├─ [18]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "-cr" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,140
+│   ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+│   └─ model = "gpt-5-mini"
+├─ [19]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "dt" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,140
+│   ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+│   └─ model = "gpt-5-mini"
+├─ [20]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "\"}" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,140
+│   ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+│   └─ model = "gpt-5-mini"
+└─ [21]
+    ├─ choices
+    │  └─ [0]
+    │      ├─ "finish_reason" = "tool_calls"
+    │      ├─ index = 0
+    │      └─ delta = { content = !n }
+    ├─ created = 1,755,958,140
+    ├─ id = "chatcmpl-C7jDQWQWgVg0p3ijPFz58C1LYGvE9"
+    ├─ usage
+    │  ├─ "completion_tokens" = 294
+    │  ├─ "completion_tokens_details" = { accepted_prediction_tokens = 0, rejected_predict ↵
+    │  │                                ion_tokens = 0 }
+    │  ├─ "prompt_tokens" = 7,124
+    │  ├─ "prompt_tokens_details" = { cached_tokens = 6,912 }
+    │  └─ "total_tokens" = 7,418
+    └─ model = "gpt-5-mini"

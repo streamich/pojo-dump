@@ -2,6 +2,8 @@ import {printTree} from 'tree-dump/lib/printTree';
 import {toLine} from './toLine';
 import {dim} from './util';
 
+const LINE_WIDTH = 90;
+
 const isPrimitive = (value: unknown): boolean => typeof value !== 'object' || value === null;
 const isShortPrimitive = (value: unknown): boolean => {
   if (typeof value === 'string') return value.length < 32;
@@ -55,7 +57,33 @@ const wrap = (line: string, tab: string, targetLineWidth: number): string => {
   return lines;
 };
 
-const wrappedStringify = (value: unknown, tab: string): string => wrap(toLine(value), tab, 89);
+const wrappedStringify = (value: unknown, tab: string): string => {
+  if (typeof value === 'string') {
+    // let text = toLine(value);
+    // const lines = text.split('" ⏎ ');
+    const lines = value.split('\n');
+    const length = lines.length;
+    const lines2: string[] = [];
+    for (let i = 0; i < length; i++) {
+      const rawLine = lines[i];
+      const isFirst = i === 0;
+      if (!rawLine && !isFirst) {
+        lines[i] = tab;
+        continue;
+      }
+      const line = toLine(rawLine);
+      const isLast = i + 1 === length;
+      lines[i] = (isFirst ? '' : tab) + wrap(line, tab, LINE_WIDTH);
+    }
+    // text = lines.join('\n');
+    // const text = text.replaceAll('⏎ ↵', '⏎');
+    const text = lines.join(' ⏎\n');
+    // text = text.replaceAll('" ⏎ ', '" ⏎\n');
+    // text = wrap(text, tab, LINE_WIDTH);
+    return text;
+  }
+  return wrap(toLine(value), tab, LINE_WIDTH)
+};
 
 const printEntry = (key: unknown, val: unknown, tab: string): string => {
   const stringifyKey = typeof key === 'string' ? !isSimpleString(key) : true;
@@ -75,7 +103,7 @@ const printEntry = (key: unknown, val: unknown, tab: string): string => {
       wrap(
         valueFormatted,
         tab + ' '.repeat(3 + Math.min(42, formattedKeyLength)),
-        Math.max(32, 89 - tab.length - formattedKeyLength - 3),
+        Math.max(32, LINE_WIDTH - tab.length - formattedKeyLength - 3),
       );
   return wrappedKey + valueFormatted;
 };
@@ -102,7 +130,7 @@ export const toTree = (value: unknown, tab: string = '', prefix = '╿\n' /* '�
       value instanceof ArrayBuffer ||
       value instanceof DataView
     )
-      return wrap(toLine(value), tab, 89);
+      return wrap(toLine(value), tab, LINE_WIDTH);
     if (value instanceof Map) {
       return (
         prefix +
@@ -129,7 +157,7 @@ export const toTree = (value: unknown, tab: string = '', prefix = '╿\n' /* '�
             if (!arr.length) return 'Set {}';
             if (isOneLineValue(arr)) {
               const line = 'Set {' + toLine(arr).slice(1, -1) + '}';
-              return wrap(line, tab, 89);
+              return wrap(line, tab, LINE_WIDTH);
             }
             return 'Set {}' + toTree(arr, tab, '');
           },

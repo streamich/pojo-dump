@@ -1,5 +1,23 @@
 import {toTree} from '../toTree';
 import {dim} from '../util';
+import * as fs from 'fs';
+
+test('beautify', () => {
+  // const transformCompletion = (num: number) => {
+  //   const request = JSON.parse(fs.readFileSync(__dirname + `/fixtures/${num}-request.json`, 'utf8'));
+  //   fs.writeFileSync(__dirname + `/fixtures/${num}-request.txt`, toTree(request));
+  //   const response = fs.readFileSync(__dirname + `/fixtures/${num}-response.ndjson`, 'utf8');
+  //   const matches = response.match(/\: (\{[^\n]+\})\n/g)?.map(m => m.slice(2, m.length - 1));
+  //   const pojo = JSON.parse('[' + matches?.join(',') + ']');
+  //   fs.writeFileSync(__dirname + `/fixtures/${num}-response.txt`, toTree(pojo));
+  // };
+  // transformCompletion(1);
+  // transformCompletion(2);
+  // transformCompletion(3);
+
+  const request = JSON.parse(fs.readFileSync(__dirname + `/fixtures/1-request.json`, 'utf8'));
+  expect(toTree(request)).toMatchSnapshot();
+});
 
 test('can format primitive values', () => {
   expect(toTree(null)).toBe('!n');
@@ -91,15 +109,7 @@ test('can wrap long object values', () => {
     x: 123,
   };
   const formatted = toTree(pojo);
-  expect(formatted).toMatchInlineSnapshot(`
-"╿
-├─ foo = "bar"
-├─ longValue = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod t ↵
-│              empor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam ↵
-│              , quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo  ↵
-│              consequat."
-└─ x = 123"
-`);
+  expect(formatted).toMatchSnapshot();
 });
 
 test('can wrap long object keys', () => {
@@ -110,17 +120,7 @@ test('can wrap long object keys', () => {
     x: 123,
   };
   const formatted = toTree(pojo);
-  expect(formatted).toMatchInlineSnapshot(`
-"╿
-├─ foo = "bar"
-├─ thisIsAVeryVeryVeryLongKeyThatNeedsWrap ↵
-│  pingBecauseItIsWayTooLong = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.  ↵
-│                              Sed do eiusmod tempor incididunt ut labore et dolore magna ↵
-│                               aliqua. Ut enim ad minim veniam, quis nostrud exercitatio ↵
-│                              n ullamco laboris nisi ut aliquip ex ea commodo consequat. ↵
-│                              "
-└─ x = 123"
-`);
+  expect(formatted).toMatchSnapshot();
 });
 
 test('can wrap long array values', () => {
@@ -130,14 +130,7 @@ test('can wrap long array values', () => {
     123,
   ];
   const formatted = toTree(pojo);
-  expect(formatted).toMatchInlineSnapshot(`
-"╿
-├─ [0]: "bar"
-├─ [1]: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor i ↵
-│       ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ↵
-│        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-└─ [2]: 123"
-`);
+  expect(formatted).toMatchSnapshot();
 });
 
 test('can print instance of Map', () => {
@@ -156,22 +149,7 @@ test('can print instance of Map', () => {
     [new Date(1752922409243), 'date'],
   ]);
   const formatted = toTree(pojo);
-  expect(formatted).toMatchInlineSnapshot(`
-"╿
-└─ Map {}
-   ├─ foo = "bar"
-   ├─ longKey = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod"
-   ├─ x = 123
-   ├─ !n = "null"
-   ├─ !u = "undefined"
-   ├─ !t = "true"
-   ├─ !f = "false"
-   ├─ 123 = "number"
-   ├─ .1 = "float"
-   ├─ string = "string"
-   ├─ /abc/ = "regexp"
-   └─ Date { 1752922409243 } = "date""
-`);
+  expect(formatted).toMatchSnapshot();
 });
 
 test('can print instance of Map - 2', () => {
@@ -183,15 +161,7 @@ test('can print instance of Map - 2', () => {
     ]),
   };
   const formatted = toTree(pojo);
-  expect(formatted).toMatchInlineSnapshot(`
-"╿
-└─ foo
-   └─ Map {}
-      ├─ foo = "bar"
-      ├─ longKey = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusm ↵
-      │            od"
-      └─ x = 123"
-`);
+  expect(formatted).toMatchSnapshot();
 });
 
 test('can print instance of Map - 3', () => {
@@ -207,27 +177,13 @@ test('can print instance of Map - 3', () => {
     3,
   ];
   const formatted = toTree(pojo);
-  expect(formatted).toMatchInlineSnapshot(`
-"╿
-├─ [0]: 1
-├─ [1]
-│   └─ [0]
-│       └─ Map {}
-│          ├─ foo = "bar"
-│          ├─ longKey = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do  ↵
-│          │            eiusmod"
-│          └─ x = 123
-└─ [2]: 3"
-`);
+  expect(formatted).toMatchSnapshot();
 });
 
 test('can print empty Map', () => {
   const pojo = new Map();
   const formatted = toTree(pojo);
-  expect(formatted).toMatchInlineSnapshot(`
-"╿
-└─ Map {}"
-`);
+  expect(formatted).toMatchSnapshot();
 });
 
 test('can print instance of Set', () => {
@@ -247,26 +203,7 @@ test('can print instance of Set', () => {
     ]),
   };
   const formatted = toTree(pojo);
-  expect(formatted).toMatchInlineSnapshot(`
-"╿
-└─ thisIsASet
-   └─ Set {}
-      ├─ [0]: "foo"
-      ├─ [1]: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod te ↵
-      │       mpor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  ↵
-      │       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo con ↵
-      │       sequat."
-      ├─ [2]: 123
-      ├─ [3]
-      │   └─ Map {}
-      │      ├─ foo = "bar"
-      │      ├─ longKey = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed d ↵
-      │      │            o eiusmod"
-      │      └─ x = 123
-      ├─ [4]: !t
-      ├─ [5]: !f
-      └─ [6]: [ !n, !u, .123 ]"
-`);
+  expect(formatted).toMatchSnapshot();
 });
 
 test('can print empty Set', () => {
@@ -281,12 +218,7 @@ test('can print empty Set', () => {
 test('can print small Set', () => {
   const pojo = {x: new Set([123456789123456, 223456789123456, 323456789123456, 423456789123456])};
   const formatted = toTree(pojo);
-  expect(formatted).toMatchInlineSnapshot(`
-"╿
-└─ x
-   └─ Set { 123,456,789,123,456, 223,456,789,123,456, 323,456,789,123,456, 423,456,789,12 ↵
-      3,456 }"
-`);
+  expect(formatted).toMatchSnapshot();
 });
 
 test('supports basic Uint8Array printing', () => {
@@ -315,10 +247,7 @@ test('single long Uint8Array', () => {
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
   ]);
   const formatted = toTree(pojo);
-  expect(formatted).toMatchInlineSnapshot(`
-"Uint8Array { 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 10 11 12 13 14 15 16 17 18 19 1 ↵
-A 1B 1C 1D 1E }"
-`);
+  expect(formatted).toMatchSnapshot();
 });
 
 test('empty Uint8Array', () => {

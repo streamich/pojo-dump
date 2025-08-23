@@ -1,0 +1,137 @@
+╿
+├─ [0]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         ├─ role = "assistant"
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "", name = "file_search" }
+│   │                ├─ id = "call_ySVBPfe3mAhTo54wkDuYKUxl"
+│   │                ├─ index = 0
+│   │                └─ type = "function"
+│   ├─ created = 1,755,958,144
+│   ├─ id = "chatcmpl-C7jDUvH6IJCfWNqfjZwVSov8Gv5qZ"
+│   └─ model = "gpt-5-mini"
+├─ [1]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "{\"" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,144
+│   ├─ id = "chatcmpl-C7jDUvH6IJCfWNqfjZwVSov8Gv5qZ"
+│   └─ model = "gpt-5-mini"
+├─ [2]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "query" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,144
+│   ├─ id = "chatcmpl-C7jDUvH6IJCfWNqfjZwVSov8Gv5qZ"
+│   └─ model = "gpt-5-mini"
+├─ [3]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "\":\"" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,144
+│   ├─ id = "chatcmpl-C7jDUvH6IJCfWNqfjZwVSov8Gv5qZ"
+│   └─ model = "gpt-5-mini"
+├─ [4]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "json" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,144
+│   ├─ id = "chatcmpl-C7jDUvH6IJCfWNqfjZwVSov8Gv5qZ"
+│   └─ model = "gpt-5-mini"
+├─ [5]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "-cr" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,144
+│   ├─ id = "chatcmpl-C7jDUvH6IJCfWNqfjZwVSov8Gv5qZ"
+│   └─ model = "gpt-5-mini"
+├─ [6]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "dt" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,144
+│   ├─ id = "chatcmpl-C7jDUvH6IJCfWNqfjZwVSov8Gv5qZ"
+│   └─ model = "gpt-5-mini"
+├─ [7]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "/**" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,144
+│   ├─ id = "chatcmpl-C7jDUvH6IJCfWNqfjZwVSov8Gv5qZ"
+│   └─ model = "gpt-5-mini"
+├─ [8]
+│   ├─ choices
+│   │  └─ [0]
+│   │      ├─ index = 0
+│   │      └─ delta
+│   │         ├─ content = !n
+│   │         └─ "tool_calls"
+│   │            └─ [0]
+│   │                ├─ function = { arguments = "\"}" }
+│   │                └─ index = 0
+│   ├─ created = 1,755,958,144
+│   ├─ id = "chatcmpl-C7jDUvH6IJCfWNqfjZwVSov8Gv5qZ"
+│   └─ model = "gpt-5-mini"
+└─ [9]
+    ├─ choices
+    │  └─ [0]
+    │      ├─ "finish_reason" = "tool_calls"
+    │      ├─ index = 0
+    │      └─ delta = { content = !n }
+    ├─ created = 1,755,958,144
+    ├─ id = "chatcmpl-C7jDUvH6IJCfWNqfjZwVSov8Gv5qZ"
+    ├─ usage
+    │  ├─ "completion_tokens" = 218
+    │  ├─ "completion_tokens_details" = { accepted_prediction_tokens = 0, rejected_predict ↵
+    │  │                                ion_tokens = 0 }
+    │  ├─ "prompt_tokens" = 7,211
+    │  ├─ "prompt_tokens_details" = { cached_tokens = 7,040 }
+    │  └─ "total_tokens" = 7,429
+    └─ model = "gpt-5-mini"

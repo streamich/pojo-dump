@@ -1,0 +1,22 @@
+data: {"choices":[{"index":0,"delta":{"content":null,"role":"assistant","tool_calls":[{"function":{"arguments":"","name":"file_search"},"id":"call_ySVBPfe3mAhTo54wkDuYKUxl","index":0,"type":"function"}]}}],"created":1755958144,"id":"chatcmpl-C7jDUvH6IJCfWNqfjZwVSov8Gv5qZ","model":"gpt-5-mini"}
+
+data: {"choices":[{"index":0,"delta":{"content":null,"tool_calls":[{"function":{"arguments":"{\""},"index":0}]}}],"created":1755958144,"id":"chatcmpl-C7jDUvH6IJCfWNqfjZwVSov8Gv5qZ","model":"gpt-5-mini"}
+
+data: {"choices":[{"index":0,"delta":{"content":null,"tool_calls":[{"function":{"arguments":"query"},"index":0}]}}],"created":1755958144,"id":"chatcmpl-C7jDUvH6IJCfWNqfjZwVSov8Gv5qZ","model":"gpt-5-mini"}
+
+data: {"choices":[{"index":0,"delta":{"content":null,"tool_calls":[{"function":{"arguments":"\":\""},"index":0}]}}],"created":1755958144,"id":"chatcmpl-C7jDUvH6IJCfWNqfjZwVSov8Gv5qZ","model":"gpt-5-mini"}
+
+data: {"choices":[{"index":0,"delta":{"content":null,"tool_calls":[{"function":{"arguments":"json"},"index":0}]}}],"created":1755958144,"id":"chatcmpl-C7jDUvH6IJCfWNqfjZwVSov8Gv5qZ","model":"gpt-5-mini"}
+
+data: {"choices":[{"index":0,"delta":{"content":null,"tool_calls":[{"function":{"arguments":"-cr"},"index":0}]}}],"created":1755958144,"id":"chatcmpl-C7jDUvH6IJCfWNqfjZwVSov8Gv5qZ","model":"gpt-5-mini"}
+
+data: {"choices":[{"index":0,"delta":{"content":null,"tool_calls":[{"function":{"arguments":"dt"},"index":0}]}}],"created":1755958144,"id":"chatcmpl-C7jDUvH6IJCfWNqfjZwVSov8Gv5qZ","model":"gpt-5-mini"}
+
+data: {"choices":[{"index":0,"delta":{"content":null,"tool_calls":[{"function":{"arguments":"/**"},"index":0}]}}],"created":1755958144,"id":"chatcmpl-C7jDUvH6IJCfWNqfjZwVSov8Gv5qZ","model":"gpt-5-mini"}
+
+data: {"choices":[{"index":0,"delta":{"content":null,"tool_calls":[{"function":{"arguments":"\"}"},"index":0}]}}],"created":1755958144,"id":"chatcmpl-C7jDUvH6IJCfWNqfjZwVSov8Gv5qZ","model":"gpt-5-mini"}
+
+data: {"choices":[{"finish_reason":"tool_calls","index":0,"delta":{"content":null}}],"created":1755958144,"id":"chatcmpl-C7jDUvH6IJCfWNqfjZwVSov8Gv5qZ","usage":{"completion_tokens":218,"completion_tokens_details":{"accepted_prediction_tokens":0,"rejected_prediction_tokens":0},"prompt_tokens":7211,"prompt_tokens_details":{"cached_tokens":7040},"total_tokens":7429},"model":"gpt-5-mini"}
+
+data: [DONE]
+

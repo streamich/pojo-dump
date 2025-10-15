@@ -133,6 +133,16 @@ test('can wrap long array values', () => {
   expect(formatted).toMatchSnapshot();
 });
 
+test('can specify line width', () => {
+  const pojo = [
+    'bar',
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    123,
+  ];
+  const formatted = toTree(pojo, '', void 0, 120);
+  expect(formatted).toMatchSnapshot();
+});
+
 test('can print instance of Map', () => {
   const pojo = new Map<any, any>([
     ['foo', 'bar'],

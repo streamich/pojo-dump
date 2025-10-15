@@ -1233,6 +1233,15 @@ exports[`can print small Set 1`] = `
       ,456 }"
 `;
 
+exports[`can specify line width 1`] = `
+"╿
+├─ [0]: "bar"
+├─ [1]: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore m ↵
+│       agna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo co ↵
+│       nsequat."
+└─ [2]: 123"
+`;
+
 exports[`can wrap long array values 1`] = `
 "╿
 ├─ [0]: "bar"

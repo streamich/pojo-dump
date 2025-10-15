@@ -106,7 +106,12 @@ const printEntry = (key: unknown, val: unknown, tab: string, lineWidth: number):
  * @param lineWidth The target maximum line width for wrapping. (In some cases, lines may exceed this width.)
  * @returns The tree-like string representation of the value.
  */
-export const toTree = (value: unknown, tab: string = '', prefix = '╿\n' /* '┯\n' */, lineWidth: number = 90): string => {
+export const toTree = (
+  value: unknown,
+  tab: string = '',
+  prefix = '╿\n' /* '┯\n' */,
+  lineWidth: number = 90,
+): string => {
   if (Array.isArray(value)) {
     if (value.length === 0) return '[]';
     return (
@@ -181,4 +186,5 @@ export const toTree = (value: unknown, tab: string = '', prefix = '╿\n' /* '�
   return wrappedStringify(value, tab, lineWidth);
 };
 
-export const logTree = (value: unknown, tab?: string, prefix?: string, lineWidth?: number): void => console.log(toTree(value, tab, prefix, lineWidth));
+export const logTree = (value: unknown, tab?: string, prefix?: string, lineWidth?: number): void =>
+  console.log(toTree(value, tab, prefix, lineWidth));
